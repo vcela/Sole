@@ -164,7 +164,7 @@ function testimonials_carousel( $atts )
         while ( $query_posts->have_posts() ) : $query_posts->the_post();
             $testimonial_position = get_post_meta( get_the_ID(), 'essence_testimonial_pos', true );
             if ( has_post_thumbnail() ):
-                $thumb = essence_core_resize_image( get_post_thumbnail_id( get_the_ID() ), null, 69, 69, true, true, false );
+                $thumb = essence_core_resize_image( get_post_thumbnail_id( get_the_ID() ), null, 120, 120, true, true, false );
             endif;
             $html_loop_items .= '<div class="essence-core-testimonials-carousel-item">
                                     <div class="thumbnail-testimonial">
