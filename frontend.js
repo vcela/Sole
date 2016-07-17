@@ -105,16 +105,15 @@ jQuery(document).ready(function ($) {
 
             $(this).owlCarousel({
                 items: $numberItem,
-                loop: true,
+                loop: $loop,
                 nav: $Nav,
                 navText: ['<span class="fa fa-angle-left"></span>', '<span class="fa fa-angle-right"></span>'],
                 navContainer: false,
                 dots: $Dots,
-                autoplay: true,
-                autoplayTimeout: 10000,
+                autoplay: $autoplay,
+                autoplayTimeout: $autoplayTimeout,
                 autoHeight: $autoHeight,
                 margin: $marginItem,
-                smartSpeed: 2500,
                 //responsiveClass:true,
                 rtl: $rtl,
                 responsive: $resNumber,
@@ -157,8 +156,60 @@ jQuery(document).ready(function ($) {
 
         });
     }
+    $('.related .products-wraps').addClass('owl-carousel');
+    /*** Carousel relate product **/
+    $('.related .products-wraps.columns-3').each(function(){            
 
-    //essence_init_owl_carousel();
+        $(this).owlCarousel({
+            items: 10,
+            loop:true,
+            nav: false,
+            dots:false,
+            margin: 30,
+            autoplay:true,
+            responsiveClass: false,
+            responsive:{
+                0:{
+                    items:1
+                },
+                480:{
+                    items:1
+                },
+                768:{
+                    items:2
+                },
+                992:{
+                    items:3
+                }
+            }
+        })
+    });
+    $('.related .products-wraps.columns-4').each(function(){            
+
+        $(this).owlCarousel({
+            items: 10,
+            loop:true,
+            nav: false,
+            dots:false,
+            margin: 30,
+            autoplay:true,
+            responsiveClass: false,
+            responsive:{
+                0:{
+                    items:1
+                },
+                480:{
+                    items:1
+                },
+                768:{
+                    items:2
+                },
+                992:{
+                    items:4
+                }
+            }
+        })
+    });
 
     //BUTTON HOVER
     $('.ts-button-shortcode').each(function () {
